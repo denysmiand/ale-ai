@@ -5,7 +5,7 @@ import { schema } from "../validation/formSchema";
 import FormField from "./FormField";
 import FormLevelSelect from "./FormLevelSelect";
 import { FormData } from "../types";
-import { useMutation } from "react-query";
+import { useMutation } from "@tanstack/react-query";
 import sendFormData from "../api/sendFormData";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -22,18 +22,16 @@ const SubmissionForm = () => {
 
   const router = useRouter();
 
-  const { mutate: submitForm, isLoading: isSubmitting } = useMutation(
-    sendFormData,
-    {
-      onSuccess: (data) => {
-        sessionStorage.setItem("formData", JSON.stringify(data.data));
-        router.push("/thank-you");
-      },
-      onError: (error: { message: string }) => {
-        setFormError(error.message);
-      },
-    }
-  );
+  const { mutate: submitForm, isPending: isSubmitting } = useMutation({
+    mutationFn: sendFormData,
+    onSuccess: (data) => {
+      sessionStorage.setItem("formData", JSON.stringify(data.data));
+      router.push("/thank-you");
+    },
+    onError: (error: { message: string }) => {
+      setFormError(error.message);
+    },
+  });
 
   const onSubmit = (data: FormData) => {
     submitForm(data);
