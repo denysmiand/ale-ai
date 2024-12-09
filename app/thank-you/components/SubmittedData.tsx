@@ -3,8 +3,11 @@ import { FormData } from "@/app/types";
 import Link from "next/link";
 
 const SubmittedData = () => {
+  if (typeof window === "undefined") return null;
   const formData = sessionStorage.getItem("formData");
+
   if (!formData) return null;
+
   const parsedFormData: FormData = JSON.parse(formData);
   return (
     <div className="flex flex-col gap-2 items-center [&_p]:text-center">
