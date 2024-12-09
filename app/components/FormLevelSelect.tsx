@@ -22,7 +22,7 @@ const FormLevelSelect: FC<LevelSelectProps> = ({ register, error }) => {
         disabled={isLoading}
         className="bg-background border border-foreground rounded py-2 px-4"
         id="level"
-        {...register("level")}
+        {...register("candidate_level")}
       >
         {data ? (
           <>

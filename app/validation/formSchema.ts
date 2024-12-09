@@ -7,15 +7,17 @@ export const schema = z.object({
     .trim()
     .min(1, { message: "Email is required." })
     .email({ message: "Email must be a valid email address." }),
-  assignment: z.string().min(10, {
+  assignment_description: z.string().min(10, {
     message: "Assignment description must be at least 10 characters.",
   }),
-  github: z
+  github_repo_url: z
     .string()
     .trim()
     .min(1, { message: "Github repository URL is required." })
-    .includes("github.com/", { message: "Github repository URL is invalid." }),
-  level: z
+    .includes("https://github.com/", {
+      message: "Github repository URL is invalid.",
+    }),
+  candidate_level: z
     .string({
       required_error: "Candidate level is required.",
     })
