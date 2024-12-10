@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SubmittedData from "./components/SubmittedData";
+import SubmittedData from "./components/SubmittedData/SubmittedData";
 
 const ThankYouPage = () => {
   return (
