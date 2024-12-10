@@ -1,12 +1,12 @@
 "use client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { schema } from "../validation/formSchema";
-import FormField from "./FormField";
-import FormLevelSelect from "./FormLevelSelect";
-import { FormData } from "../types";
+import { schema } from "@/validation/formSchema";
+import FormField from "@/components/FormField/FormField";
+import FormLevelSelect from "@/components/FormLevelSelect/FormLevelSelect";
+import { FormData } from "@/types";
 import { useMutation } from "@tanstack/react-query";
-import sendFormData from "../api/sendFormData";
+import sendFormData from "@/api/sendFormData";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -76,8 +76,8 @@ const SubmissionForm = () => {
       {formError && <p className="error-message">{formError}</p>}
       <button
         type="submit"
-        className="rounded border px-4 py-1 [&:disabled]:opacity-50 shadow-sm hover:shadow-md transition-shadow duration-300"
-        disabled={isSubmitting}
+        className="rounded border px-4 py-1 shadow-sm hover:shadow-md transition-shadow duration-300 [&:disabled]:opacity-50 [&:disabled]:hover:shadow-sm"
+        disabled={isSubmitting || Object.keys(errors).length !== 0}
       >
         Submit
       </button>

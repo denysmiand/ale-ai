@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { FormData, ValidFieldNames } from "../types";
+import { FormData, ValidFieldNames } from "@/types";
 import { FieldError, UseFormRegister } from "react-hook-form";
 
 type FormFieldProps = {

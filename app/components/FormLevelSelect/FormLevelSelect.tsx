@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { FormData, RestLevelsResponse } from "../types";
+import { FormData, RestLevelsResponse } from "@/types";
 import { FC } from "react";
 import { FieldError, UseFormRegister } from "react-hook-form";
 
-type LevelSelectProps = {
+export type LevelSelectProps = {
   register: UseFormRegister<FormData>;
   error?: FieldError;
 };

@@ -1,5 +1,5 @@
 "use client";
-import { FormData } from "@/app/types";
+import { FormData } from "@/types";
 import Link from "next/link";
 
 const SubmittedData = () => {
