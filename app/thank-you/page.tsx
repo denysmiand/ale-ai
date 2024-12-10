@@ -3,8 +3,10 @@ import SubmittedData from "./components/SubmittedData/SubmittedData";
 
 const ThankYouPage = () => {
   return (
-    <div className="flex flex-col gap-4 items-center justify-center h-screen">
-      <h1 className="text-center text-2xl">Thank you for your submission!</h1>
+    <div className="flex flex-col gap-4 items-center justify-center h-full">
+      <h1 className="text-center text-2xl font-bold">
+        Thank you for your submission!
+      </h1>
       <SubmittedData />
       <Link
         href="/"

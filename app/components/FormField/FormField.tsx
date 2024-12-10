@@ -19,8 +19,10 @@ const FormField: FC<FormFieldProps> = ({
   error,
   multiline,
 }) => (
-  <div className="flex flex-col gap-2">
-    <label htmlFor={name}>{placeholder}</label>
+  <div className="flex flex-col gap-1">
+    <label htmlFor={name} className="leading-[1]">
+      {placeholder}
+    </label>
     {multiline ? (
       <textarea
         placeholder={placeholder}
