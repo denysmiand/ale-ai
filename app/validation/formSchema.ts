@@ -14,7 +14,7 @@ export const schema = z.object({
     .string()
     .trim()
     .min(1, { message: "Github repository URL is required." })
-    .includes("https://github.com/", {
+    .refine((value) => value.toLowerCase().includes("https://github.com/"), {
       message: "Github repository URL is invalid.",
     }),
   candidate_level: z
