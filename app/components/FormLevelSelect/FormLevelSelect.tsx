@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-import { FormData, RestLevelsResponse } from "../types";
+import { FormData, RestLevelsResponse } from "@/types";
 import { FC } from "react";
 import { FieldError, UseFormRegister } from "react-hook-form";
 
-type LevelSelectProps = {
+export type LevelSelectProps = {
   register: UseFormRegister<FormData>;
   error?: FieldError;
 };
@@ -18,8 +18,10 @@ const FormLevelSelect: FC<LevelSelectProps> = ({ register, error }) => {
   if (!data && !isLoading) return <p>Could not retrieve levels.</p>;
 
   return (
-    <div className="flex flex-col gap-2">
-      <label htmlFor="level">Level</label>
+    <div className="flex flex-col gap-1">
+      <label htmlFor="level" className="leading-[1]">
+        Level
+      </label>
       <select
         disabled={isLoading}
         className="bg-background border border-foreground rounded py-2 px-4"

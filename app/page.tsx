@@ -1,8 +1,8 @@
-import SubmissionForm from "./components/SubmissionForm";
+import SubmissionForm from "@/components/SubmissionForm/SubmissionForm";
 
 export default function Home() {
   return (
-    <div className="p-4 md:p-10 min-h-[100dvh] flex justify-center items-center">
+    <div className="h-full flex justify-center items-center">
       <SubmissionForm />
     </div>
   );

@@ -1,5 +1,5 @@
 "use client";
-import { FormData } from "@/app/types";
+import { FormData } from "@/types";
 import Link from "next/link";
 
 const SubmittedData = () => {
@@ -11,9 +11,7 @@ const SubmittedData = () => {
   const parsedFormData: FormData = JSON.parse(formData);
   return (
     <div className="flex flex-col gap-2 items-center [&_p]:text-center">
-      <p className="text-lg">
-        <b>Data you have submitted:</b>
-      </p>
+      <p className="text-lg font-semibold">Data you have submitted:</p>
       <p>
         <b>Name: </b>
         {parsedFormData.name}
